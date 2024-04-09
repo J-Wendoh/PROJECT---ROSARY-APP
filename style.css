@@ -4,7 +4,7 @@ body { background-image: url("https://images.unsplash.com/photo-1570336684085-f8
     margin-right:5px;
 } 
 
-.btn {background-color: chocolate;
+.btn {background-color: rgb(131, 55, 1);
          border-radius: 10px;
          text-align: center;
          text-wrap:word;
@@ -12,12 +12,13 @@ body { background-image: url("https://images.unsplash.com/photo-1570336684085-f8
          text-decoration-style: solid;
          font-family:  "Gill Sans Extrabold", sans-serif;
         margin: 10px;
-        size: 50px;
+        width: 92px;
+        height:50px;
 
         }
 
 .heading {text-align: center;
-    background-color: chocolate;
+    background-color: rgb(131, 55, 1);
     border-radius: 15px;
 }
 
