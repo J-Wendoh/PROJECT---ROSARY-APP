@@ -1,12 +1,16 @@
-body { background-image: url("https://images.unsplash.com/photo-1570336684085-f8453342cfd7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); 
+body {
+    background-size: cover;
+    background-image: url("./images/rosaryappbackground"); 
     margin-top: 0px;
     margin-left: 5px;
     margin-right:5px;
 } 
 
+
+
 #refresh{
     border-radius: 700px;
-    
+
 }
 
 

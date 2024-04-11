@@ -19,7 +19,7 @@ buttons.forEach(function(btn) {
     // Increase button width by 10px
     btn.style.width = "315px";
     // Change button color
-    btn.style.backgroundColor = "coral";
+    btn.style.backgroundColor = "#967969";
   });
 
   // Add event listener for mouseout event
@@ -37,163 +37,287 @@ addEventListener("DOMContentLoaded", (event) => {
   //SUNDAY
   sbtn.addEventListener("click",grabsun)
 
-  function grabsun(){
-  fetch('https://the-rosary-api.vercel.app/v1/sunday')
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => {
-  console.log(data)
-    const par = document.createElement('p');
-    data.forEach(item => {
-      par.textContent = `
-        ${<p>In the name: ${item.in_the_name_1}</p>}
-        ${<p>I believe: ${item.i_believe}</p>}
-        ${<p>Our Father: ${item.our_father_1}</p>}
-        ${<p>Hail Mary 1: ${item.hail_mary_1}</p>}
-      `;
-      position.prepend(par);})
-      
-  })
-  .catch(error => {
-    // Handle any errors that occur during the fetch operation
-    console.error('Error fetching data:', error);
-  });
+  
+  function grabsun() {
+    fetch('https://the-rosary-api.vercel.app/v1/sunday')
+      .then(response => response.json()) // Parse the response as JSON
+      .then(data => {
+        console.log(data);
+  
+        data.forEach(item => {
+          const par = document.createElement('p');
+          const ul = document.createElement('ul');
+  
+          // Iterate over the properties of the item object
+          for (const key in item) {
+            if (item.hasOwnProperty(key) && key !== 'id') {
+              // Create a list item for each value and append it to the unordered list
+              const li = document.createElement('li');
+              li.textContent = item[key];
+              ul.appendChild(li);
+            }
+          }
+  
+          // Append the unordered list to the paragraph
+          par.appendChild(ul);
+          par.style.backgroundColor = "#967969"; // Set background color for each paragraph
+          position.appendChild(par);
+        });
+      })
+      .catch(error => {
+        // Handle any errors that occur during the fetch operation
+        console.error('Error fetching data:', error);
+      });
   }
+  
+  
 
 
 //MONDAY
   mbtn.addEventListener("click",grabmon)
 
-  function grabmon(){
-  fetch('https://the-rosary-api.vercel.app/v1/monday')
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => {
-  console.log(data)
-    const jsonData = [data][0]
-    const par = document.createElement('p');
-    par.textContent = `Let us Start today's prayer, ${jsonData}`;
-    position.prepend(par);
-  })
-  .catch(error => {
-    // Handle any errors that occur during the fetch operation
-    console.error('Error fetching data:', error);
-  });
+  function grabmon() {
+    fetch('https://the-rosary-api.vercel.app/v1/monday')
+      .then(response => response.json()) // Parse the response as JSON
+      .then(data => {
+        console.log(data);
+  
+        data.forEach(item => {
+          const par = document.createElement('p');
+          const ul = document.createElement('ul');
+  
+          // Iterate over the properties of the item object
+          for (const key in item) {
+            if (item.hasOwnProperty(key) && key !== 'id') {
+              // Create a list item for each value and append it to the unordered list
+              const li = document.createElement('li');
+              li.textContent = item[key];
+              ul.appendChild(li);
+            }
+          }
+  
+          // Append the unordered list to the paragraph
+          par.appendChild(ul);
+          par.style.backgroundColor = "#967969"; // Set background color for each paragraph
+          position.appendChild(par);
+        });
+      })
+      .catch(error => {
+        // Handle any errors that occur during the fetch operation
+        console.error('Error fetching data:', error);
+      });
   }
+  
 
   //TUESDAY
   tbtn.addEventListener("click",grabtue)
 
-  function grabtue(){
-  fetch('https://the-rosary-api.vercel.app/v1/tuesday')
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => {
-  console.log(data)
-    const jsonData = [data][0]
-    const par = document.createElement('p');
-    par.textContent = `Let us Start today's prayer, ${jsonData}`;
-    position.prepend(par);
-  })
-  .catch(error => {
-    // Handle any errors that occur during the fetch operation
-    console.error('Error fetching data:', error);
-  });
+  function grabtue() {
+    fetch('https://the-rosary-api.vercel.app/v1/tuesday')
+      .then(response => response.json()) // Parse the response as JSON
+      .then(data => {
+        console.log(data);
+  
+        data.forEach(item => {
+          const par = document.createElement('p');
+          const ul = document.createElement('ul');
+  
+          // Iterate over the properties of the item object
+          for (const key in item) {
+            if (item.hasOwnProperty(key) && key !== 'id') {
+              // Create a list item for each value and append it to the unordered list
+              const li = document.createElement('li');
+              li.textContent = item[key];
+              ul.appendChild(li);
+            }
+          }
+  
+          // Append the unordered list to the paragraph
+          par.appendChild(ul);
+          par.style.backgroundColor = "#967969"; // Set background color for each paragraph
+          position.appendChild(par);
+        });
+      })
+      .catch(error => {
+        // Handle any errors that occur during the fetch operation
+        console.error('Error fetching data:', error);
+      });
   }
-
+  
   //WEDNESDAY
   wbtn.addEventListener("click",grabwed)
 
-  function grabwed(){
-  fetch('https://the-rosary-api.vercel.app/v1/wednesday')
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => {
-  console.log(data)
-    const jsonData = [data][0]
-    const par = document.createElement('p');
-    par.textContent = `Let us Start today's prayer, ${jsonData}`;
-    position.prepend(par);
-  })
-  .catch(error => {
-    // Handle any errors that occur during the fetch operation
-    console.error('Error fetching data:', error);
-  });
+  function grabwed() {
+    fetch('https://the-rosary-api.vercel.app/v1/wednesday')
+      .then(response => response.json()) // Parse the response as JSON
+      .then(data => {
+        console.log(data);
+  
+        data.forEach(item => {
+          const par = document.createElement('p');
+          const ul = document.createElement('ul');
+  
+          // Iterate over the properties of the item object
+          for (const key in item) {
+            if (item.hasOwnProperty(key) && key !== 'id') {
+              // Create a list item for each value and append it to the unordered list
+              const li = document.createElement('li');
+              li.textContent = item[key];
+              ul.appendChild(li);
+            }
+          }
+  
+          // Append the unordered list to the paragraph
+          par.appendChild(ul);
+          par.style.backgroundColor = "#967969"; // Set background color for each paragraph
+          position.appendChild(par);
+        });
+      })
+      .catch(error => {
+        // Handle any errors that occur during the fetch operation
+        console.error('Error fetching data:', error);
+      });
   }
+  
 
   //THURSDAY
   thbtn.addEventListener("click",grabthur)
 
-  function grabthur(){
-  fetch('https://the-rosary-api.vercel.app/v1/thursday')
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => {
-  console.log(data)
-    const jsonData = [data][0]
-    const par = document.createElement('p');
-    par.textContent = `Let us Start today's prayer, ${jsonData}`;
-    position.prepend(par);
-  })
-  .catch(error => {
-    // Handle any errors that occur during the fetch operation
-    console.error('Error fetching data:', error);
-  });
+  function grabthur() {
+    fetch('https://the-rosary-api.vercel.app/v1/thursday')
+      .then(response => response.json()) // Parse the response as JSON
+      .then(data => {
+        console.log(data);
+  
+        data.forEach(item => {
+          const par = document.createElement('p');
+          const ul = document.createElement('ul');
+  
+          // Iterate over the properties of the item object
+          for (const key in item) {
+            if (item.hasOwnProperty(key) && key !== 'id') {
+              // Create a list item for each value and append it to the unordered list
+              const li = document.createElement('li');
+              li.textContent = item[key];
+              ul.appendChild(li);
+            }
+          }
+  
+          // Append the unordered list to the paragraph
+          par.appendChild(ul);
+          par.style.backgroundColor = "#967969"; // Set background color for each paragraph
+          position.appendChild(par);
+        });
+      })
+      .catch(error => {
+        // Handle any errors that occur during the fetch operation
+        console.error('Error fetching data:', error);
+      });
   }
+  
 
   //FRIDAY
   fbtn.addEventListener("click",grabfri)
 
-  function grabfri(){
-  fetch('https://the-rosary-api.vercel.app/v1/friday')
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => {
-  console.log(data)
-    const jsonData = [data][0]
-    const par = document.createElement('p');
-    par.textContent = `Let us Start today's prayer, ${jsonData}`;
-    position.prepend(par);
-  })
-  .catch(error => {
-    // Handle any errors that occur during the fetch operation
-    console.error('Error fetching data:', error);
-  });
+  function grabfri() {
+    fetch('https://the-rosary-api.vercel.app/v1/friday')
+      .then(response => response.json()) // Parse the response as JSON
+      .then(data => {
+        console.log(data);
+  
+        data.forEach(item => {
+          const par = document.createElement('p');
+          const ul = document.createElement('ul');
+  
+          // Iterate over the properties of the item object
+          for (const key in item) {
+            if (item.hasOwnProperty(key) && key !== 'id') {
+              // Create a list item for each value and append it to the unordered list
+              const li = document.createElement('li');
+              li.textContent = item[key];
+              ul.appendChild(li);
+            }
+          }
+  
+          // Append the unordered list to the paragraph
+          par.appendChild(ul);
+          par.style.backgroundColor = "#967969"; // Set background color for each paragraph
+          position.appendChild(par);
+        });
+      })
+      .catch(error => {
+        // Handle any errors that occur during the fetch operation
+        console.error('Error fetching data:', error);
+      });
   }
+  
 
 
   //SATURDAY
   satbtn.addEventListener("click",grabsat)
 
-  function grabsat(){
-  fetch('https://the-rosary-api.vercel.app/v1/saturday')
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => {
-  console.log(data)
-    const jsonData = [data][0]
-    const par = document.createElement('p');
-    par.textContent = `Let us Start today's prayer, ${jsonData}`;
-    position.prepend(par);
-  })
-  .catch(error => {
-    // Handle any errors that occur during the fetch operation
-    console.error('Error fetching data:', error);
-  });
+  function grabsat() {
+    fetch('https://the-rosary-api.vercel.app/v1/saturday')
+      .then(response => response.json()) // Parse the response as JSON
+      .then(data => {
+        console.log(data);
+  
+        data.forEach(item => {
+          const par = document.createElement('p');
+          const ul = document.createElement('ul');
+  
+          // Iterate over the properties of the item object
+          for (const key in item) {
+            if (item.hasOwnProperty(key) && key !== 'id') {
+              // Create a list item for each value and append it to the unordered list
+              const li = document.createElement('li');
+              li.textContent = item[key];
+              ul.appendChild(li);
+            }
+          }
+  
+          // Append the unordered list to the paragraph
+          par.appendChild(ul);
+          par.style.backgroundColor = "#967969"; // Set background color for each paragraph
+          position.appendChild(par);
+        });
+      })
+      .catch(error => {
+        // Handle any errors that occur during the fetch operation
+        console.error('Error fetching data:', error);
+      });
   }
+  
 
 
   //TODAY
   todbtn.addEventListener("click",grabtod)
 
-  function grabtod(){
-  fetch('https://the-rosary-api.vercel.app/v1/today')
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => {
-  console.log(data)
-    const jsonData = [data][0]
-    const par = document.createElement('p');
-    par.textContent = `Let us Start today's prayer, ${jsonData}`;
-    position.prepend(par);
-  })
-  .catch(error => {
-    // Handle any errors that occur during the fetch operation
-    console.error('Error fetching data:', error);
-  });
+  function grabtod() {
+    fetch('https://the-rosary-api.vercel.app/v1/today')
+      .then(response => response.json()) // Parse the response as JSON
+      .then(data => {
+        console.log(data);
+
+
+        data.forEach(item => {
+          const par= document.createElement('p');
+          position.style.backgroundColor="#967969"
+          par.innerHTML = `
+            ${item.currentDate}
+            ${item.rosary_day}
+            ${item.mystery} mysteries
+            `
+          ;
+          position.prepend(par);
+        });
+      })
+      .catch(error => {
+        // Handle any errors that occur during the fetch operation
+        console.error('Error fetching data:', error);
+      });
   }
+  
 
 
  
