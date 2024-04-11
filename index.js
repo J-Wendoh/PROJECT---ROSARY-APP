@@ -9,9 +9,30 @@ const position=document.getElementById("location")
 const todbtn=document.getElementById("today")
 
 
+ 
+const buttons = document.querySelectorAll('.btn');
 
+// Loop through each button and attach event listeners
+buttons.forEach(function(btn) {
+  // Add event listener for mouseover event
+  btn.addEventListener("mouseover", function() {
+    // Increase button width by 10px
+    btn.style.width = "315px";
+    // Change button color
+    btn.style.backgroundColor = "coral";
+  });
+
+  // Add event listener for mouseout event
+  btn.addEventListener("mouseout", function() {
+    // Reset button width to initial
+    btn.style.width = "300px";
+    // Reset button color to original
+    btn.style.backgroundColor = "#7B3F00";
+  });
+});
 
 addEventListener("DOMContentLoaded", (event) => {
+
 
   //SUNDAY
   sbtn.addEventListener("click",grabsun)
@@ -21,10 +42,16 @@ addEventListener("DOMContentLoaded", (event) => {
   .then(response => response.json()) // Parse the response as JSON
   .then(data => {
   console.log(data)
-    const jsonData = [data][0]
     const par = document.createElement('p');
-    par.textContent = `Let us Start today's prayer, ${jsonData}`;
-    position.prepend(par);
+    data.forEach(item => {
+      par.textContent = `
+        ${<p>In the name: ${item.in_the_name_1}</p>}
+        ${<p>I believe: ${item.i_believe}</p>}
+        ${<p>Our Father: ${item.our_father_1}</p>}
+        ${<p>Hail Mary 1: ${item.hail_mary_1}</p>}
+      `;
+      position.prepend(par);})
+      
   })
   .catch(error => {
     // Handle any errors that occur during the fetch operation
