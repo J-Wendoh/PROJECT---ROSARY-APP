@@ -5,7 +5,13 @@ body {
     margin-left: 5px;
     margin-right:5px;
 } 
+#intro{
+    font-weight: bolder;
 
+}
+#extro{
+    font-weight: bolder;
+}
 h4{
     font-style: oblique;
     text-decoration: underline;
