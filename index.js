@@ -280,6 +280,8 @@ addEventListener("DOMContentLoaded", (event) => {
           par.appendChild(ul);
           par.style.backgroundColor = "#967969"; // Set background color for each paragraph
           position.appendChild(par);
+
+          
         });
       })
       .catch(error => {
@@ -288,8 +290,34 @@ addEventListener("DOMContentLoaded", (event) => {
       });
   }
   
+//tomorrow
+document.getElementById("tomorrow").addEventListener("click",grabtom)
+
+  function grabtom() {
+    fetch('https://the-rosary-api.vercel.app/v1/tomorrow')
+      .then(response => response.json()) // Parse the response as JSON
+      .then(data => {
+        console.log(data);
 
 
+        data.forEach(item => {
+          const par= document.createElement('p');
+          position.style.backgroundColor="#967969"
+          par.innerHTML = `
+            ${item.currentDate}
+            ${item.rosary_day}
+            ${item.mystery} mysteries
+            `
+          ;
+          position.prepend(par);
+        });
+      })
+      .catch(error => {
+        // Handle any errors that occur during the fetch operation
+        console.error('Error fetching data:', error);
+      });
+  }
+  
   //TODAY
   todbtn.addEventListener("click",grabtod)
 
@@ -318,11 +346,22 @@ addEventListener("DOMContentLoaded", (event) => {
       });
   }
   
+//listen buuton
+document.getElementById("listen").addEventListener("click", function() {
 
+  document.body.scrollIntoView({ behavior: "smooth", block: "end" });
 
  
           })
 
+//BACK BUTTON
+document.getElementById("BACK").addEventListener("click", function() {
+
+  document.body.scrollIntoView({ behavior: "smooth", block: "start" });
+
+ 
+          })
+        })
 
 
 
