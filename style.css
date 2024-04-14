@@ -5,6 +5,10 @@ body {
     margin-left: 5px;
     margin-right:5px;
 } 
+#disclaimer{
+    font-style: oblique;
+    font-weight: bold;
+}
 #intro{
     font-weight: bolder;
 
